@@ -60,14 +60,20 @@ with st.container():
     
      # Form untuk jam
     with col2:
-      #  now = datetime.now()
-        wib = pytz.timezone('Etc/GMT+7')
-        now = datetime.datetime.utcnow()
-        utc7 = now.astimezone(wib)
-        st.write("aku", utc7)
-        # loc_server = wib.localize(now)
-        # waktu = loc_server.strftime("%H:%M")
-        # jam = st.text_input('Pada Jam:\n\n', waktu)
+        tz = pytz.timezone('Asia/Jakarta')
+
+        # Mendapatkan waktu saat ini dalam UTC+7
+        waktu_saat_ini = datetime.now(tz)
+        
+        print(waktu_saat_ini)
+      # #  now = datetime.now()
+      #   wib = pytz.timezone('Etc/GMT+7')
+      #   now = datetime.datetime.utcnow()
+      #   utc7 = now.astimezone(wib)
+      #   st.write("aku", utc7)
+      #   # loc_server = wib.localize(now)
+      #   # waktu = loc_server.strftime("%H:%M")
+      #   # jam = st.text_input('Pada Jam:\n\n', waktu)
         
     # Form tanggal
     with col3:
