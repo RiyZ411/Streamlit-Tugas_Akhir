@@ -65,22 +65,14 @@ with st.container():
         waktu_saat_ini = datetime.now(tz)
         jam_sek = waktu_saat_ini.strftime("%H:%M")
         jam = st.text_input('Pada Jam:\n\n', jam_sek)
-        # st.write(waktu_saat_ini)
-      # #  now = datetime.now()
-      #   wib = pytz.timezone('Etc/GMT+7')
-      #   now = datetime.datetime.utcnow()
-      #   utc7 = now.astimezone(wib)
-      #   st.write("aku", utc7)
-      #   # loc_server = wib.localize(now)
-      #   # waktu = loc_server.strftime("%H:%M")
-      #   # jam = st.text_input('Pada Jam:\n\n', waktu)
         
     # Form tanggal
     with col3:
-        now = datetime.now()
-        wib = timezone('Asia/Jakarta')
-        loc_server = wib.localize(now)
-        datetime_input = st.date_input('Pada Tanggal:\n\n', loc_server)
+        tz = pytz.timezone('Asia/Jakarta')
+        # Mendapatkan waktu saat ini dalam UTC+7
+        waktu_saat_ini = datetime.now(tz)
+        tgl_sek = waktu_saat_ini.date()
+        tgl = st.date_input('Pada Jam:\n\n', tgl_sek)
 
 
 st.write("\n\n\n\n")   
