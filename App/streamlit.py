@@ -61,11 +61,10 @@ with st.container():
      # Form untuk jam
     with col2:
         tz = pytz.timezone('Asia/Jakarta')
-
         # Mendapatkan waktu saat ini dalam UTC+7
         waktu_saat_ini = datetime.now(tz)
-        
-        st.write(waktu_saat_ini)
+        jam = st.text_input('Pada Jam:\n\n', waktu_saat_ini)
+        # st.write(waktu_saat_ini)
       # #  now = datetime.now()
       #   wib = pytz.timezone('Etc/GMT+7')
       #   now = datetime.datetime.utcnow()
