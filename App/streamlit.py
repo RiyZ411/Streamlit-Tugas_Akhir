@@ -7,7 +7,7 @@ from pytz import timezone
 import base64
 
 # Memanggil best model
-Model = joblib.load("/home/riyan/Tugas_Akhir/Models/Best_Model.joblib")
+Model = joblib.load("Models/Best_Model.joblib")
 
 # Fungsi untuk mendapatkan string base64 dari file gambar
 def get_base64_of_bin_file(bin_file):
@@ -31,7 +31,7 @@ def set_png_as_page_bg(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Menggunakan fungsi di atas
-set_png_as_page_bg('/home/riyan/Tugas_Akhir/Images/DKI.jpeg')
+set_png_as_page_bg('Images/DKI.jpeg')
 
 # Judul aplikasi
 st.markdown("<h1 style='text-align: center;'>Prediksi Kualitas Udara Jakarta</h1>", unsafe_allow_html=True)
