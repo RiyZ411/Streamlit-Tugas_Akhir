@@ -60,11 +60,10 @@ with st.container():
      # Form untuk jam
     with col2:
         now = datetime.now()
-        wib = timezone('Asia/Jakarta')
+        wib = pytz.timezone('Asia/Jakarta')
         loc_server = wib.localize(now)
         waktu = loc_server.strftime("%H:%M")
         jam = st.text_input('Pada Jam:\n\n', waktu)
-        st.write('waktu :',waktu)
         
     # Form tanggal
     with col3:
