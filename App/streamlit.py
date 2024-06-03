@@ -64,7 +64,8 @@ with st.container():
         loc_server = wib.localize(now)
         waktu = loc_server.strftime("%H:%M")
         jam = st.text_input('Pada Jam:\n\n', waktu)
-
+        st.write('waktu':,waktu)
+        
     # Form tanggal
     with col3:
         now = datetime.now()
