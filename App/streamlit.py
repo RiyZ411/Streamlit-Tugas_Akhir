@@ -65,7 +65,7 @@ with st.container():
         # Mendapatkan waktu saat ini dalam UTC+7
         waktu_saat_ini = datetime.now(tz)
         
-        print(waktu_saat_ini)
+        st.write(waktu_saat_ini)
       # #  now = datetime.now()
       #   wib = pytz.timezone('Etc/GMT+7')
       #   now = datetime.datetime.utcnow()
