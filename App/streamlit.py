@@ -114,13 +114,16 @@ with st.form("predict"):
     # Tambahkan tombol
     submitted = st.form_submit_button("Predict")
 
-    # Lakukan prediksi
+        # Lakukan prediksi
     if submitted:
-        pred = Model.predict([[pm10_val,pm25_val,so2_val,co_val,o3_val,no2_val,max_val]])
-        if pred[0]==1:
-            st.success("Kondisi Udara Baik")
-        elif pred[0]==2:
-            st.warning("Kondisi Udara Sedang")
-        elif pred[0]==3:
-            st.warning("Peringatan, Kondisi Udara Tidak Sehat", icon="⚠️")
+        if pm10_val == 0 or pm25_val == 0 or o3_val == 0 or so2_val == 0 or no2_val == 0 or co_val == 0 or max_val == 0:
+            st.error('Mohon diulangi, pastikan semua form telah Anda isi')
+        else:
+            pred = Model.predict([[pm10_val,pm25_val,so2_val,co_val,o3_val,no2_val,max_val]])
+            if pred[0]==1:
+                st.success("Kondisi Udara Baik")
+            elif pred[0]==2:
+                st.warning("Peringatan, Kondisi Udara Sedang")
+            elif pred[0]==3:
+                st.error("Bahaya, Kondisi Udara Tidak Sehat", icon="⚠️")
         
