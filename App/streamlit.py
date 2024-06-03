@@ -58,13 +58,13 @@ with st.container():
         tempat = ["DKI1 Bundaran HI", "DKI2 Kelapa Gading", "DKI3 Jagakarsa", "DKI4 Lubang Buaya", "DKI5 Kebun Jeruk"]
         pilihan = st.selectbox('Pilih Tempat', tempat)
     
-     # Form untuk jam
+    # Form untuk jam
     with col2:
         tz = pytz.timezone('Asia/Jakarta')
         # Mendapatkan waktu saat ini dalam UTC+7
         waktu_saat_ini = datetime.now(tz)
         jam_sek = waktu_saat_ini.strftime("%H:%M")
-        jam = st.text_input('Pada Jam:\n\n', jam_sek)
+        jam = st.text_input('Pilih Jam:\n\n', jam_sek)
         
     # Form tanggal
     with col3:
@@ -72,7 +72,7 @@ with st.container():
         # Mendapatkan waktu saat ini dalam UTC+7
         waktu_saat_ini = datetime.now(tz)
         tgl_sek = waktu_saat_ini.date()
-        tgl = st.date_input('Pada Jam:\n\n', tgl_sek)
+        tgl = st.date_input('Pilih Tanggal:\n\n', tgl_sek)
 
 
 st.write("\n\n\n\n")   
