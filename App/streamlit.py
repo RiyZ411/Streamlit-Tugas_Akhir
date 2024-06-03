@@ -3,10 +3,11 @@ import streamlit as st
 import joblib
 from PIL import Image
 from datetime import datetime
+from pytz import timezone
 import base64
 
 # Memanggil best model
-Model = joblib.load("Models/Best_Model.joblib")
+Model = joblib.load("/home/riyan/Tugas_Akhir/Models/Best_Model.joblib")
 
 # Fungsi untuk mendapatkan string base64 dari file gambar
 def get_base64_of_bin_file(bin_file):
@@ -30,7 +31,7 @@ def set_png_as_page_bg(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Menggunakan fungsi di atas
-set_png_as_page_bg('Images/DKI.jpeg')
+set_png_as_page_bg('/home/riyan/Tugas_Akhir/Images/DKI.jpeg')
 
 # Judul aplikasi
 st.markdown("<h1 style='text-align: center;'>Prediksi Kualitas Udara Jakarta</h1>", unsafe_allow_html=True)
@@ -58,13 +59,19 @@ with st.container():
     
      # Form untuk jam
     with col2:
-        waktu_sekarang = datetime.now().time()
-        waktu = st.time_input('Pilih Waktu', waktu_sekarang)
+        now = datetime.now()
+        wib = timezone('Asia/Jakarta')
+        loc_server = wib.localize(now)
+        waktu = loc_server.strftime("%H:%M")
+        jam = st.text_input('Pada Jam:\n\n', waktu)
 
-    # Form untuk tanggal
+    # Form tanggal
     with col3:
-        tanggal_sekarang = datetime.now().date()
-        tanggal = st.date_input('Pilih Tanggal', tanggal_sekarang)
+        now = datetime.now()
+        wib = timezone('Asia/Jakarta')
+        loc_server = wib.localize(now)
+        datetime_input = st.date_input('Pada Tanggal:\n\n', loc_server)
+
 
 st.write("\n\n\n\n")   
 # Form predict
