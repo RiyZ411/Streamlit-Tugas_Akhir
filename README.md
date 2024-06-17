@@ -1,5 +1,5 @@
 # Sistem Klasifikasi Kondisi Udara DKI Jakarta Menggunakan Algoritma Random Forest Dengan Synthetic Minority Oversampling Technique
-Project ini dibuat untuk memenuhi Tugas Akhir dari Prodi S1 Sains Data, Universitas Teknology Yogyakarta. 
+Project ini dibuat untuk memenuhi Tugas Akhir dari Prodi S1 Sains Data, Universitas Teknology Yogyakarta. Hasil project ini berupa aplikasi website yang bisa memprediksi kondisi udara. Aplikasi web tersebut bisa diakses di [sini](https://app-tugas-akhir-ispu-jakarta.streamlit.app/)
 - Nama            = Riyan Zaenal Arifin
 - NIM             = 5201811011
 - Email Institusi = riyan.5201811011@student.uty.ac.id
@@ -11,9 +11,9 @@ Kualitas udara di kota-kota besar seperti DKI Jakarta sering kali menjadi perhat
 ## Penjelasan Folder
 ### [App](https://github.com/RiyZ411/Streamlit-Tugas_Akhir/tree/main/App)
 Merupakan folder untuk menyimpan kode python untuk tampilan web yang menggunakan library streamlit. selain itu, disimpan juga package-package library python yang digunakan untuk pembuatan project ini yang diambil dari virtual environment.
-### Data
+### [Data](https://github.com/RiyZ411/Streamlit-Tugas_Akhir/tree/main/Data)
 Merupakan folder untuk menyimpan data, baik data mentah, data yang sudah melalui tahap preparation, data untuk training model, dan data untuk test model.
-### Images
+### [Images](https://github.com/RiyZ411/Streamlit-Tugas_Akhir/tree/main/Images)
 Merupakan folder untuk menyimpan gambar dari background web.
-### Models
+### [Models](https://github.com/RiyZ411/Streamlit-Tugas_Akhir/tree/main/Models)
 Merupakan folder untuk menyimpan model, best model dari proses cross validation, serta file jupyter notebook dari pemrosesan data hingga menjadi model.
